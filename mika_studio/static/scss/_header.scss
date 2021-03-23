@@ -2,7 +2,7 @@
 .header_part {
     background-color: $white;
     .sub_header {
-        padding: 9px 0;
+        padding: 5px 0;
         background-color: $base_color;
         @media #{$mobile} {
             text-align: center;
@@ -56,9 +56,9 @@
                 font-size: 14px;
                 font-weight: 500;
             }
-    
+
         }
-        
+
     }
     .header{
         .navbar {
@@ -135,7 +135,7 @@
                 color: #5f5f7f;
                 font-weight: 700;
                 font-size: 14px;
-                
+
                 &:hover{
                     background-color: $base_color;
                     color: $white;
@@ -207,8 +207,8 @@
                     color: #f9ae15;
                 }
             }
-        } 
-    } 
+        }
+    }
     @media (max-width: 991px){
         .navbar-toggler {
             border: 0 solid transparent;
@@ -225,7 +225,7 @@
     }
     img{
         -webkit-filter: brightness(0) invert(1);
-        filter: brightness(0) invert(1); 
+        filter: brightness(0) invert(1);
     }
 }
 .header_style_3{
@@ -240,8 +240,8 @@
                     color: $base_color;
                 }
             }
-        } 
-    } 
+        }
+    }
     @media (max-width: 991px){
         .navbar-toggler {
             border: 0 solid transparent;
@@ -252,7 +252,7 @@
     }
     img{
         -webkit-filter: brightness(0) invert(1);
-        filter: brightness(0) invert(1); 
+        filter: brightness(0) invert(1);
     }
 }
 @media (max-width: 991px){
@@ -307,8 +307,8 @@
     }
     img{
        -webkit-filter: none;
-       filter: none; 
+       filter: none;
     }
-    
+
 }
 /******** header css end *********/

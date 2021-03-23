@@ -48,7 +48,7 @@
             height: 100%;
             z-index: 1;
             @include transform_time(.3s);
-            background-color: rgb(254 75 123 / 0);
+            background-color: rgba(254, 75, 123, 0);
         }
 
         .grid_item_content {
@@ -77,7 +77,7 @@
             }
 
             &:after {
-                background-color: rgb(254 75 123 / .7);
+                background-color: rgba(254, 75, 123, .7);
             }
         }
         .gallery_item_icon{

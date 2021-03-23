@@ -17,7 +17,7 @@
         margin-bottom: 0;
         width: 100%;
         display: block;
-        background: rgb(0 0 0 / .1);
+        background: rgba(0, 0, 0, .1);
     }
     &.bg_color_2{
         background-color: #00D5CB;
@@ -59,7 +59,7 @@
 
     .cu_btn{
         padding: 21px 34px;
-        
+
     }
     &.wave_shape_bg{
         background-image: url(../img/animation_shape/services_bg_shape.png);
