@@ -13,11 +13,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
 
-  <link rel="icon" href="{% static 'images/favicons/favicon.ico' %}">
+
 
   {% block css %}
 
-  <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
     <!-- Your stuff: Third-party CSS libraries go here -->
     {% compress css %}
       <!-- This file stores project-specific CSS -->
@@ -49,23 +49,23 @@
 
 <body>
 
-    <div class='preloder'>
-        <div class='loader'>
-            <div class='loader--dot'></div>
-            <div class='loader--dot'></div>
-            <div class='loader--dot'></div>
-            <div class='loader--dot'></div>
-            <div class='loader--dot'></div>
-            <div class='loader--dot'></div>
-            <div class='loader--text'></div>
-        </div>
-    </div>
-    {% include 'include/_header.html' %}
+<div class='preloder'>
+  <div class='loader'>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--dot'></div>
+    <div class='loader--text'></div>
+  </div>
+</div>
+{% include 'include/_header.html' %}
 
-    <!-- header part end -->
+<!-- header part end -->
 
 
-<div class="container">
+{% block page %}
 
   {% if messages %}
     {% for message in messages %}
@@ -80,7 +80,7 @@
     <p>Use this document as a way to quick start any new project.</p>
   {% endblock content %}
 
-</div> <!-- /container -->
+{% endblock %} <!-- /container -->
 
 {% block modal %}{% endblock modal %}
 {% block javascript %}
