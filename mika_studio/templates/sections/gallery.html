@@ -1,39 +1,79 @@
 <!-- out gallery part here -->{% load settings_tags static %}
-  <section class="our_gallery padding_top">
-    <div class="container-fluid no-gutters">
-      <div class="row justify-content-center">
-        <div class="col-lg-5">
-          <div class="section_tittle_style_02">
-            <h2 class="title wow fadeInDown" data-wow-delay=".3s"><span
-                    class="title_overlay_effect">Фотогалерея</span></h2>
-            <p class="description wow fadeInDown" data-wow-delay=".3s"><i>Жизнь</i> состоит не из времени, а из <i>моментов</i></p>
-          </div>
+<!-- out gallery part here -->
+<section class="our_gallery gallery_style_2 section_bg section_padding">
+  <div class="container-fluid no-gutters">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="section_tittle_style_02">
+          <h2 class="title wow fadeInDown" data-wow-delay=".3s">
+            <div class="title_overlay_effect">Фотогалерея</div>
+          </h2>
+          <p class="description wow fadeInDown" data-wow-delay=".3s"><i>Жизнь</i> состоит не из времени, а из <i>моментов</i></p>
         </div>
       </div>
+    </div>
+    <div class="row wow fadeInDown" data-wow-delay=".5s">
+      <div class="col-lg-12 p-0">
+        <div class="gallery_slider owl-carousel gallery_popup_img">
+        {% get_gallery as photos %}
+          {% for photo in photos %}
+          <a href="{{ photo.image.url }}" class="grid-item bg_1">
+            <div class="grid_item_content">
+              <h3>{{ photo.title }}</h3>
+{#              <p>Kids, Daycare, Kindergarten</p>#}
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery_animation_1">
+    <div data-parallax='{"x": 2, "y": 20, "rotateZ":0}'><img src="{% static '' %}img/icon/banner_two_1.png" alt="#"></div>
+  </div>
+  <div class="gallery_animation_2">
+    <div data-parallax='{"x": 10, "y": 50, "rotateZ":0}'><img src="{% static '' %}img/icon/event_1.png" alt="#"></div>
+  </div>
+</section>
+<!-- out gallery part end -->
 
-      <div class="row wow fadeInDown" data-wow-delay=".5s">
-        <div class="col-lg-12 p-0">
-          <div class="grid gallery_iner gallery_popup_img">
-            <div class="grid-sizer"></div>
-              {% get_gallery as photos %}
-            {% for photo in photos %}
-            <a href="{{ photo.image.url }}" class="grid-item grid_item_width2 grid_item_height2" style="background-image:url('{{ photo.photo.url }}')">
-              <div class="grid_item_content">
-                <img src="{% static '' %}img/icon/gallery_icon.svg" alt="#" class="gallery_item_icon">
-                <h3>{{ photo.title}}</h3>
-{#                <p>Kids, Daycare, Kindergarten</p>#}
-              </div>
-            </a>
-           {% endfor %}
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="gallery_animation_1">
-      <div data-parallax='{"x": 2, "y": 20, "rotateZ":0}'><img src="{% static '' %}img/icon/gallery_1.png" alt="#"></div>
-    </div>
-    <div class="gallery_animation_2">
-      <div data-parallax='{"x": 10, "y": 50, "rotateZ":0}'><img src="{% static '' %}img/icon/gallery_2.png" alt="#"></div>
-    </div>
-  </section>
-  <!-- out gallery part end -->
+{#<section class="our_gallery padding_top">#}
+{#  <div class="container-fluid no-gutters">#}
+{#    <div class="row justify-content-center">#}
+{#      <div class="col-lg-5">#}
+{#        <div class="section_tittle_style_02">#}
+{#          <h2 class="title wow fadeInDown" data-wow-delay=".3s"><span#}
+{#                  class="title_overlay_effect">Фотогалерея</span></h2>#}
+{#          <p class="description wow fadeInDown" data-wow-delay=".3s"><i>Жизнь</i> состоит не из времени, а из <i>моментов</i>#}
+{#          </p>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{##}
+{#    <div class="row wow fadeInDown" data-wow-delay=".5s">#}
+{#      <div class="col-lg-12 p-0">#}
+{#        <div class="grid gallery_iner gallery_popup_img">#}
+{#          <div class="grid-sizer"></div>#}
+{#         #}
+{#          {% for photo in photos %}#}
+{#            <a href="{{ photo.image.url }}" class="grid-item grid_item_width2 grid_item_height2"#}
+{#               style="background-image:url('{{ photo.photo.url }}')">#}
+{#              <div class="grid_item_content">#}
+{#                <img src="{% static '' %}img/icon/gallery_icon.svg" alt="#" class="gallery_item_icon">#}
+{#                <h3>{{ photo.title }}</h3>#}
+                {#                <p>Kids, Daycare, Kindergarten</p>#}
+{#              </div>#}
+{#            </a>#}
+{#          {% endfor %}#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </div>#}
+{#  <div class="gallery_animation_1">#}
+{#    <div data-parallax='{"x": 2, "y": 20, "rotateZ":0}'><img src="{% static '' %}img/icon/gallery_1.png" alt="#"></div>#}
+{#  </div>#}
+{#  <div class="gallery_animation_2">#}
+{#    <div data-parallax='{"x": 10, "y": 50, "rotateZ":0}'><img src="{% static '' %}img/icon/gallery_2.png" alt="#"></div>#}
+{#  </div>#}
+{#</section>#}
+<!-- out gallery part end -->

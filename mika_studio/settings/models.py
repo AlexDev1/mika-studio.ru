@@ -45,8 +45,9 @@ class Service(PageMeta):
 class PriceServices(models.Model):
     """Прайс на услуги"""
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    days = models.CharField("Дни", blank=False, null=False, max_length=100)
+    days = models.CharField("Дни", blank=False, null=False, max_length=100, help_text='Например: пн-чт')
     price = models.PositiveSmallIntegerField("Прайс", default=0)
+    time = models.CharField("Время", max_length=100, help_text="с 9.00 до 21.00", default="с 9.00 до 21.00")
 
     def __str__(self):
         return '{} - {} руб.'.format(self.days, self.price)
