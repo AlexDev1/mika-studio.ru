@@ -1,0 +1,30 @@
+from django.contrib import admin
+
+from mika_studio.settings.models import Slider, Service, PriceServices, ShowPrograms, PhotoGallery
+
+
+@admin.register(Slider)
+class SliderAdmin(admin.ModelAdmin):
+    list_display = ['title']
+
+
+class PriceAdmin(admin.TabularInline):
+    model = PriceServices
+    extra = 0
+
+
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ["image_tag", 'title']
+    inlines = [PriceAdmin]
+    fields = ('title', 'image_tag', 'image', 'subtitle', 'price')
+    readonly_fields = ('image_tag',)
+
+@admin.register(ShowPrograms)
+class ShowProgramsAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(PhotoGallery)
+class PhotoGalleryAdmin(admin.ModelAdmin):
+    pass
