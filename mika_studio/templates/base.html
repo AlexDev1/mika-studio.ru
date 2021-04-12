@@ -1,4 +1,4 @@
-{% load static i18n compress %}<!DOCTYPE html>
+{% load static i18n compress cache settings_tags %}<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="utf-8">
@@ -13,10 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
 
-
-
   {% block css %}
-
     <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
     <!-- Your stuff: Third-party CSS libraries go here -->
     {% compress css %}
@@ -48,7 +45,6 @@
 </head>
 
 <body>
-
 <div class='preloder'>
   <div class='loader'>
     <div class='loader--dot'></div>
@@ -60,13 +56,10 @@
     <div class='loader--text'></div>
   </div>
 </div>
-{% include 'include/_header.html' %}
+{% cache 3600 '_header' %}{% include 'include/_header.html' %}{% endcache %}
 
 <!-- header part end -->
-
-
 {% block page %}
-
   {% if messages %}
     {% for message in messages %}
       <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">{{ message }}
@@ -79,9 +72,64 @@
   {% block content %}
     <p>Use this document as a way to quick start any new project.</p>
   {% endblock content %}
+{% endblock %}
 
-{% endblock %} <!-- /container -->
+<footer class="footer_section home_two_footer">
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-lg-3 col-sm-6 wow fadeInDown" data-wow-delay=".3s">
+        <div class="single_footer_widget">
+          <a href="index.html" class="footer_logo"><img src="{% static 'img/logo.png' %}" alt="#"></a>
+          <p>Проведение детских мероприятий
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-2 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
+        <div class="single_footer_widget footer_nav">
+          <h4>Услуги</h4>
+          <ul>
+            {% get_menu_services as services %}
+            {% for item in services %}
+              <li><a href="{{ item.get_absolut_url }}">{{ item }}</a></li>
+            {% endfor %}
 
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
+        <div class="single_footer_widget footer_nav">
+          <h4>Полезные ссылки</h4>
+          <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Контакты</a></li>
+            <li><a href="#">Новости</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6 wow fadeInDown" data-wow-delay=".9s">
+        <div class="single_footer_widget instagram_feed">
+          <h4>Mika Studio</h4>
+          <p>Детские праздники, фотостудия, игротека</p>
+          <form action="#">
+            <div class="input-group">
+              <input type="Email" class="form-control" placeholder="Email">
+              <div class="input-group-append">
+                <span class="input-group-text"> <i class="ti-arrow-right"></i> </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bg">
+    <img src="{% static 'img/footer_bg.png' %}" alt="#" class="img-fluid">
+  </div>
+  <div class="footer_animation_3">
+    <div data-parallax='{"x": 30, "y": 70, "rotateZ":0}'><img src="{% static 'img/footer_img.png' %}" alt="#"></div>
+  </div>
+</footer>
 {% block modal %}{% endblock modal %}
 {% block javascript %}
   {% compress js %}

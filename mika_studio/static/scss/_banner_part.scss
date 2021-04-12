@@ -166,10 +166,12 @@
         }
     }
 
-    .bg_1 {
-        @include background("../img/banner.png");
+    .bg_2 {
+        @include background("../img/happykids2.jpg");
     }
-
+  .bg_1 {
+        @include background("../img/happykids.jpg");
+    }
     .owl-nav button.owl-next,
     .owl-nav button.owl-prev {
         border: 2px solid transparent;
