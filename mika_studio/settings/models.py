@@ -36,7 +36,7 @@ class Service(PageMeta):
 
     def image_tag(self):
         from django.utils.html import escape
-        return mark_safe('<img width="350" src="%s" />' % escape(self.image.url))
+        return mark_safe('<img width="150" src="%s" />' % escape(self.image.url))
 
     image_tag.short_description = 'Картинка'
     image_tag.allow_tags = True

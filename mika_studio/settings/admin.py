@@ -15,9 +15,9 @@ class PriceAdmin(admin.TabularInline):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ["image_tag", 'title']
+    list_display = ["image_tag", 'title', 'publish']
     inlines = [PriceAdmin]
-    fields = ('title', 'image_tag', 'image', 'subtitle', 'price')
+    fields = ('title', 'image_tag', 'image', 'subtitle', 'price', 'publish')
     readonly_fields = ('image_tag',)
 
 @admin.register(ShowPrograms)
