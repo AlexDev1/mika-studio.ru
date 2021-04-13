@@ -20,20 +20,13 @@
       <!-- This file stores project-specific CSS -->
 
       {#    <link href="{% static 'scss/style.scss' %}" rel="stylesheet" type="text/x-scss">#}
-
-      <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
-      <!-- animate CSS -->
       <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
-      <!-- font awesome CSS -->
       <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}"/>
-      <!-- elegent icon CSS -->
       <link rel="stylesheet" href="{% static 'vendors/themefy_icon/themify-icons.css' %}"/>
-      <!-- nice select CSS -->
       <link rel="stylesheet" href="{% static 'vendors/niceselect/css/nice-select.css' %}"/>
-      <!-- owl carousel CSS -->
       <link rel="stylesheet" href="{% static 'vendors/owl_carousel/css/owl.carousel.css' %}"/>
-      <!-- style CSS -->
+      <link rel="stylesheet" href="{% static 'vendors/magnify_popup/magnific-popup.css' %}" />
       <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/style.scss' %}" media="all"/>
     {% endcompress %}
   {% endblock %}
@@ -133,30 +126,19 @@
 {% block modal %}{% endblock modal %}
 {% block javascript %}
   {% compress js %}
-    <!-- jquery slim -->
     <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
-    <!-- popper js -->
     <script src="{% static 'js/popper.min.js' %}"></script>
-    <!-- bootstarp js -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <!-- nice select -->
     <script src="{% static 'vendors/niceselect/js/jquery.nice-select.min.js' %}"></script>
     <script src="{% static 'vendors/magnify_popup/jquery.magnific-popup.js' %}"></script>
-    <!-- owl carousel js -->
     <script src="{% static 'vendors/owl_carousel/js/owl.carousel.min.js' %}"></script>
-    <!-- parallax js -->
     <script src="{% static 'vendors/parallax/jquery.parallax-scroll.js' %}"></script>
     <script src="{% static 'vendors/parallax/parallax.js' %}"></script>
-    <!-- wow js -->
     <script src="{% static 'vendors/wow/wow.min.js' %}"></script>
-    <!-- countup js -->
     <script src="{% static 'vendors/counter/jquery.waypoints.min.js' %}"></script>
     <script src="{% static 'vendors/counter/jquery.counterup.min.js' %}"></script>
-    <!-- isotop js -->
-    <!-- isotop js -->
     <script src="{% static 'vendors/isotop/imagesloaded.pkgd.min.js' %}"></script>
     <script src="{% static 'vendors/isotop/isotope.pkgd.js' %}"></script>
-    <!-- custom js -->
     <script src="{% static 'js/custom.js' %}"></script>
     <script defer src="{% static 'js/project.js' %}"></script>
   {% endcompress %}

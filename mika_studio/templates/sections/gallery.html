@@ -17,10 +17,9 @@
         <div class="gallery_slider owl-carousel gallery_popup_img">
         {% get_gallery as photos %}
           {% for photo in photos %}
-          <a href="{{ photo.image.url }}" class="grid-item" style="background-image:url('{{ photo.photo.url }}')">
+          <a href="{{ photo.photo.url }}" class="grid-item" style="background-image:url('{{ photo.photo.url }}')">
             <div class="grid_item_content">
               <h3>{{ photo.title }}</h3>
-{#              <p>Kids, Daycare, Kindergarten</p>#}
             </div>
           </a>
           {% endfor %}
