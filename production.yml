@@ -13,7 +13,7 @@ services:
     image: mika_studio_production_django
     volumes:
       - production_postgres_data:/var/lib/postgresql/data:Z
-      - media:/media:Z
+#      - media:/media:Z
     depends_on:
       - postgres
       - redis
