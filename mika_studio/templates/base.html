@@ -16,7 +16,7 @@
   {% block css %}
     <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
     <!-- Your stuff: Third-party CSS libraries go here -->
-{#    {% compress css %}#}
+    {% compress css %}
       <!-- This file stores project-specific CSS -->
 
       {#    <link href="{% static 'scss/style.scss' %}" rel="stylesheet" type="text/x-scss">#}
@@ -35,7 +35,7 @@
       <link rel="stylesheet" href="{% static 'vendors/owl_carousel/css/owl.carousel.css' %}"/>
       <!-- style CSS -->
       <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/style.scss' %}" media="all"/>
-{#    {% endcompress %}#}
+    {% endcompress %}
   {% endblock %}
   <!-- Le javascript
   ================================================== -->
