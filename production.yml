@@ -11,6 +11,9 @@ services:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
     image: mika_studio_production_django
+    volumes:
+      - production_postgres_data:/var/lib/postgresql/data:Z
+      - media:/media
     depends_on:
       - postgres
       - redis
@@ -62,4 +65,4 @@ services:
     image: mika_studio_production_flower
     command: /start-flower
 
-  
+
