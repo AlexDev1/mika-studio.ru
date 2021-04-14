@@ -4,6 +4,7 @@ volumes:
   production_postgres_data: {}
   production_postgres_data_backups: {}
   production_traefik: {}
+  media: {}
 
 services:
   django: &django
@@ -14,6 +15,8 @@ services:
     depends_on:
       - postgres
       - redis
+    volumes:
+      - media:/app/mika_studio/media
     env_file:
       - ./.envs/.production/.django
       - ./.envs/.production/.postgres
