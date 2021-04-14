@@ -15,7 +15,7 @@ services:
       - postgres
       - redis
     volumes:
-      - .:/app:z
+      - media:/home/app/mika-studio.ru/media:z
     env_file:
       - ./.envs/.production/.django
       - ./.envs/.production/.postgres
