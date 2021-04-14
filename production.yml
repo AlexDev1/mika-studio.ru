@@ -52,7 +52,7 @@ services:
 
   celeryworker:
     <<: *django
-    image: mika produ_celeryworker
+    image: mika_produ_celeryworker
     command: /start-celeryworker
 
   celerybeat:
