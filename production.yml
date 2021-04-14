@@ -11,12 +11,12 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/django/Dockerfile
-    image: mika_studio_production_django
+    image: mika_prod_django
     depends_on:
       - postgres
       - redis
     volumes:
-      - .:/app:z
+      - media:/home/app/mika-studio.ru/media:z
     env_file:
       - ./.envs/.production/.django
       - ./.envs/.production/.postgres
@@ -26,7 +26,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/postgres/Dockerfile
-    image: mika_studio_production_postgres
+    image: mika_prod_postgres
     volumes:
       - production_postgres_data:/var/lib/postgresql/data:Z
       - production_postgres_data_backups:/backups:z
@@ -37,7 +37,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/traefik/Dockerfile
-    image: mika_studio_production_traefik
+    image: mika_prod_traefik
     depends_on:
       - django
     volumes:
@@ -52,17 +52,17 @@ services:
 
   celeryworker:
     <<: *django
-    image: mika_studio_production_celeryworker
+    image: mika produ_celeryworker
     command: /start-celeryworker
 
   celerybeat:
     <<: *django
-    image: mika_studio_production_celerybeat
+    image: mika_prod_celerybeat
     command: /start-celerybeat
 
   flower:
     <<: *django
-    image: mika_studio_production_flower
+    image: mika_prod_flower
     command: /start-flower
 
 
