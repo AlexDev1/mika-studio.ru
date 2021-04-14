@@ -70,7 +70,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # ------------------------------------------------------------------------------
 # DEFAULT_FILE_STORAGE = "mika_studio.utils.storages.MediaRootGoogleCloudStorage"
 MEDIA_URL = "media/"
-MEDIA_ROOT = str(ROOT_DIR / "media")
+MEDIA_ROOT = str("/home/app/media/mika/" / "media")
 
 
 # TEMPLATES
