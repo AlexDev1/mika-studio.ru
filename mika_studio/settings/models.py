@@ -19,6 +19,9 @@ class Slider(models.Model):
         verbose_name = "Слайд"
         verbose_name_plural = "Слайды на главной"
 
+    def __str__(self):
+        return self.title
+
 
 class Service(PageMeta):
     """Услуги"""
@@ -67,6 +70,9 @@ class ShowPrograms(PageMeta):
         verbose_name = "Шоу программа"
         verbose_name_plural = "Шоу программы"
 
+    def __str__(self):
+        return self.title
+
 
 class PhotoGallery(models.Model):
     photo = models.ImageField("Фото")
@@ -77,3 +83,6 @@ class PhotoGallery(models.Model):
         ordering = ['order']
         verbose_name = "Фотография"
         verbose_name_plural = "Фотогалерея"
+
+    def __str__(self):
+        return self.title
