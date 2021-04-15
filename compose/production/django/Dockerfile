@@ -49,4 +49,6 @@ USER django
 
 WORKDIR /app
 
+VOLUME /app/mika_studio/media
+
 ENTRYPOINT ["/entrypoint"]
