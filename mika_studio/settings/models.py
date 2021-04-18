@@ -51,6 +51,13 @@ class PhotoServices(models.Model):
     photo = models.ImageField("Фото", null=False, blank=False)
     title = models.CharField("Название", max_length=255, null=False)
 
+    def __str__(self):
+        return 'Фото {}'.format(self.title)
+
+    class Meta:
+        verbose_name = 'Фото'
+        verbose_name_plural = "Фотографии в услуге"
+
 
 class PriceServices(models.Model):
     """Прайс на услуги"""
