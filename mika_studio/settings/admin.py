@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mika_studio.settings.models import Slider, Service, PriceServices, ShowPrograms, PhotoGallery
+from mika_studio.settings.models import Slider, Service, PriceServices, ShowPrograms, PhotoGallery, PhotoServices
 
 
 @admin.register(Slider)
@@ -14,7 +14,7 @@ class PriceAdmin(admin.TabularInline):
 
 
 class PhotoServicesAdmin(admin.TabularInline):
-    model = PriceServices
+    model = PhotoServices
     extra = 0
 
 @admin.register(Service)
