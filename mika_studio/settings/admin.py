@@ -13,10 +13,14 @@ class PriceAdmin(admin.TabularInline):
     extra = 0
 
 
+class PhotoServicesAdmin(admin.TabularInline):
+    model = PriceServices
+    extra = 0
+
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ["image_tag", 'title', 'publish']
-    inlines = [PriceAdmin]
+    inlines = [PriceAdmin, PhotoServicesAdmin]
     fields = ('title', 'image_tag', 'image', 'subtitle', 'price', 'publish')
     readonly_fields = ('image_tag',)
 

@@ -26,7 +26,7 @@ class Slider(models.Model):
 class Service(PageMeta):
     """Услуги"""
     image = models.ImageField('Картинка')
-    subtitle = models.TextField("Описание", max_length=255, null=True, blank=True)
+    subtitle = models.TextField("Описание", null=True, blank=True)
     price = models.CharField("Прайс", default=0, null=False,
                              help_text='Минимальный ценник на пример: От 1200 рублей за час', max_length=50)
 
@@ -43,6 +43,13 @@ class Service(PageMeta):
 
     image_tag.short_description = 'Картинка'
     image_tag.allow_tags = True
+
+
+class PhotoServices(models.Model):
+    """Фото для услуг"""
+    services = models.ForeignKey(Service, on_delete=models.CASCADE)
+    photo = models.ImageField("Фото", null=False, blank=False)
+    title = models.CharField("Название", max_length=255, null=False)
 
 
 class PriceServices(models.Model):
