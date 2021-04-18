@@ -1,0 +1,68 @@
+{% extends "base.html" %}{% load static %}
+{% block content %}
+  <!-- cta part here -->
+  <section class="cta_part section_padding">
+    <div class="container">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-8">
+          <div class="cta_part_iner">
+            <h2>Правила оплаты</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb_animation_1">
+      <div data-parallax='{"x": 30, "y": -20}'>
+        <img src="{% static 'img/cta_img_1.png' %}" alt="#">
+      </div>
+    </div>
+    <div class="breadcrumb_animation_2">
+      <div data-parallax='{"x": 20, "y": -100}'>
+        <img src="{% static 'img/cta_img_2.png' %}" alt="#">
+      </div>
+    </div>
+  </section>
+  <!-- cta part end -->
+  <!-- event section part here -->
+  <section class="event_section section_padding event_details">
+    <div class="container custom_container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-12">
+          <div class="event_details_wrapper">
+            <ol>
+              <li>
+            Предоплата за аренду студии 1000 руб.
+              </li>
+              <li>
+            При бронировании аренды помещения оставшийся сумму вы вносите перед началом праздника.
+              </li>
+              <li>
+            При отмене бронирования по каким либо причинам можете выбрать другую свободную дату.
+              </li>
+              <li>Предоплата за дополнительные услуги такие как: анимация, шоу программы, мастер-классы, шары, 50 % от
+              общей стоимости, При отмене бронирования в день мероприятия предоплата не возвращается.</li>
+            </ol>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="about_page_animation_1">
+      <div data-parallax='{"x": 2, "y": 70, "rotateZ":0}'><img src="{% static 'img/icon/icon_7.png' %}" alt="#"></div>
+    </div>
+    <div class="about_page_animation_2">
+      <div data-parallax='{"x": 10, "y": 80, "rotateZ":0}'><img src="{% static 'img/icon/event_6.png' %}" alt="#"></div>
+    </div>
+    <div class="about_page_animation_3">
+      <div data-parallax='{"x": 30, "y": 60, "rotateZ":0}'><img src="{% static 'img/icon/banner_two_2.png' %}" alt="#">
+      </div>
+    </div>
+    <div class="about_page_animation_4">
+      <div data-parallax='{"x": 30, "y": -50, "rotateZ":0}'><img src="{% static 'img/icon/team_animation.png' %}"
+                                                                 alt="#"
+                                                                 class="img-fluid"></div>
+    </div>
+  </section>
+  <!-- event section part end -->
+{% endblock %}

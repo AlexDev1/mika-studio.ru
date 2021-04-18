@@ -1,0 +1,93 @@
+{% extends "base.html" %}{% load settings_tags static %}
+{% block content %}
+
+  <!-- breadcrumb part -->
+  <section class="breadcrumb_part parallax_bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 ">
+          <div class="breadcrumb_iner">
+            <h2>Фотогалерея</h2>
+            <div class="breadcrumb_iner_link">
+              <a href="/">Главная</a>
+              <span>|</span>
+              <p>Фотогалерея</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="breadcrumb_animation_4">
+      <div data-parallax='{"x": 30, "y": 250, "rotateZ":0}'>
+        <img src="{% static 'img/icon/banner_icon/animated_banner_4.png' %}" alt="#">
+      </div>
+    </div>
+    <div class="breadcrumb_animation_5">
+      <div data-parallax='{"x": 20, "y": 150, "rotateZ": 180}'>
+        <img src="{% static '' %}img/icon/banner_icon/animated_banner_5.png" alt="#">
+      </div>
+    </div>
+    <div class="breadcrumb_animation_7">
+      <div data-parallax='{"x": 100, "y": 250, "rotateZ":0}'>
+        <img src="{% static '' %}img/icon/banner_icon/animated_banner_15.png" alt="#">
+      </div>
+    </div>
+    <div class="breadcrumb_animation_10">
+      <div data-parallax='{"x": 15, "y": 150, "rotateZ":0}'>
+        <img src="{% static '' %}img/icon/banner_icon/animated_banner_10.png" alt="#">
+      </div>
+    </div>
+    <div class="breadcrumb_animation_12">
+      <div data-parallax='{"x": 20, "y": 150, "rotateZ":180}'>
+        <img src="{% static '' %}img/icon/banner_icon/animated_banner_20.png" alt="#">
+      </div>
+    </div>
+    <div class="breadcrumb_animation_13">
+      <div data-parallax='{"x": 10, "y": 250, "rotateZ": 180}'>
+        <img src="{% static '' %}img/icon/banner_icon/animated_banner_21.png" alt="#">
+      </div>
+    </div>
+  </section>
+  <!-- breadcrumb part end -->
+
+
+ <section class="our_gallery padding_top">
+        <div class="container-fluid no-gutters">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="section_tittle_style_02">
+                        <h2 class="title wow fadeInDown" data-wow-delay=".3s"> <span class="title_overlay_effect">Наша галерея</span> </h2>
+{#                        <p class="description wow fadeInDown" data-wow-delay=".3s">mika studio mission is to provide affordable, high-quality#}
+{#                        early education and childcare services for working families to ensure every child.</p>#}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row wow fadeInDown" data-wow-delay=".5s">
+                <div class="col-lg-12 p-0">{% get_gallery as photos %}
+                    <div class="grid gallery_iner gallery_popup_img">
+                        <div class="grid-sizer"></div>
+                        {% for photo in photos %}
+                        <a href="{{ photo.photo.url }}"
+                           style="background-image: url({{ photo.photo.url }});"
+                           class="{% if forloop.counter|divisibleby:2 %}grid-item grid_item_width2 grid_item_height2
+                                  {% else %}grid-item{% endif %}">
+                            <div class="grid_item_content">
+                                <img src="{{ photo.photo.url }}" alt="#" class="gallery_item_icon">
+                                <h3>{{ photo.title }}</h3>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery_animation_1">
+            <div data-parallax='{"x": 2, "y": 20, "rotateZ":0}'><img src="{% static '' %}img/icon/gallery_1.png" alt="#"></div>
+        </div>
+        <div class="gallery_animation_2">
+            <div data-parallax='{"x": 10, "y": 50, "rotateZ":0}'><img src="{% static '' %}img/icon/gallery_2.png" alt="#"></div>
+        </div>
+    </section>
+{% endblock %}

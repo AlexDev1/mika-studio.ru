@@ -3,21 +3,39 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from django.views import defaults as default_views
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, DetailView
 from rest_framework.authtoken.views import obtain_auth_token
 
+from mika_studio.settings.models import Service
+
 urlpatterns = [
-    path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-    path(
-        "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-    ),
-    # Django Admin, use {% url 'admin:index' %}
-    path(settings.ADMIN_URL, admin.site.urls),
-    # User management
-    path("users/", include("mika_studio.users.urls", namespace="users")),
-    path("accounts/", include("allauth.urls")),
-    # Your stuff: custom urls includes go here
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+                  path(
+                      "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
+                  ),
+                  path(
+                      "contacts/", TemplateView.as_view(template_name="pages/contacts.html"), name="contacts"
+                  ),
+                    path(
+                      "service/<int:pk>/", DetailView.as_view(
+                            template_name="services/detail.html",
+                            model=Service
+                        ), name="service-detail"
+                  ),
+                  path(
+                      "photos/", TemplateView.as_view(template_name="pages/photos.html"), name="photos"
+                  ),
+                  path("rules/visiting/", TemplateView.as_view(template_name="pages/rules_visiting.html"), name="home"),
+                  path("rules/pay/", TemplateView.as_view(template_name="pages/rules_pay.html"), name="home"),
+
+                  path("rules/ban/", TemplateView.as_view(template_name="pages/rules_ban.html"), name="home"),
+                  # Django Admin, use {% url 'admin:index' %}
+                  path(settings.ADMIN_URL, admin.site.urls),
+                  # User management
+                  path("users/", include("mika_studio.users.urls", namespace="users")),
+                  path("accounts/", include("allauth.urls")),
+                  # Your stuff: custom urls includes go here
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
 urlpatterns += [

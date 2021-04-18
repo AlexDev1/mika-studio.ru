@@ -54,16 +54,27 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">О нас</a>
+                  <a class="nav-link" href="{% url 'about' %}">О нас</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Фотогалерея</a>
+                  <a class="nav-link" href="{% url 'photos' %}">Фотогалерея</a>
+                </li>
+{#                <li class="nav-item dropdown">#}
+{#                  <a class="nav-link" href="#">Новости</a>#}
+{#                </li>#}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#">Новости</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Контакты</a>
+                  <a class="nav-link dropdown-toggle" href="#" role="button"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Наши правила
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/rules/visiting/">Правила посещения студии</a>
+                    <a class="dropdown-item" href="/rules/pay/">Правила оплаты</a>
+                    <a class="dropdown-item" href="/rules/ban/">Запрещается</a>
+                  </div>
                 </li>
               </ul>
             </div>

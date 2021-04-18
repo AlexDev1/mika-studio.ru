@@ -60,15 +60,15 @@
           <div class="single_program_list wow fadeInUp" data-wow-delay=".{{ forloop.counter }}s">
             <img src="{{ service.image.url }}" alt="#" class="img-fluid">
             <div class="single_program_list_content bg-white">
-              <h4><a href="event_details.html">{{ service.title }}</a></h4>
-              <p>{{ service.subtitle|truncatechars:45 }}</p>
+              <h4><a href="{{ service.get_absolut_url }}">{{ service.title }}</a></h4>
+              <p>{{ service.subtitle|truncatechars:100 }}</p>
               {% for price in service.priceservices_set.all %}
-              <div class="program_list_details">
-                <h5>Дни <span>{{ price.days }}</span></h5>
-                <h5>Стоимость <span>{{ price.price|intcomma }} <i class="fas fa-ruble-sign"></i></span></h5>
-                <h5>Время <span>{{ price.time }} </span></h5>
-              </div>
-                {% endfor %}
+                <div class="program_list_details">
+                  <h5>Дни <span>{{ price.days }}</span></h5>
+                  <h5>Стоимость <span>{{ price.price|intcomma }} <i class="fas fa-ruble-sign"></i></span></h5>
+                  <h5>Время <span>{{ price.time }} </span></h5>
+                </div>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -356,7 +356,7 @@
             <img src="{% static '' %}img/cta_img.png" alt="#" class="img-fluid">
             <h2>Забронируйте время</h2>
             <p></p>
-            <a class="pc-button elementor-button button-link cu_btn" href="contact.html">
+            <a class="pc-button elementor-button button-link cu_btn" href="{% url 'contacts' %}">
               <div class="button-content-wrapper ">
                 <span class="elementor-button-text">Контакты</span>
                 <svg class="pc-dashes inner-dashed-border animated-dashes">

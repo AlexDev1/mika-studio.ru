@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 
 from mika_studio.core.models import PageMeta
@@ -44,12 +45,18 @@ class Service(PageMeta):
     image_tag.short_description = 'Картинка'
     image_tag.allow_tags = True
 
+    def get_absolut_url(self):
+        return reverse('service-detail', args=[self.pk])
+
+    def photos(self):
+        return self.photoservices_set.all()
+
 
 class PhotoServices(models.Model):
     """Фото для услуг"""
     services = models.ForeignKey(Service, on_delete=models.CASCADE)
     photo = models.ImageField("Фото", null=False, blank=False)
-    title = models.CharField("Название", max_length=255, null=False)
+    title = models.CharField("Название", max_length=255, null=True, blank=True)
 
     def __str__(self):
         return 'Фото {}'.format(self.title)
