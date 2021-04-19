@@ -16,11 +16,11 @@ urlpatterns = [
                   path(
                       "contacts/", TemplateView.as_view(template_name="pages/contacts.html"), name="contacts"
                   ),
-                    path(
+                  path(
                       "service/<int:pk>/", DetailView.as_view(
-                            template_name="services/detail.html",
-                            model=Service
-                        ), name="service-detail"
+                          template_name="services/detail.html",
+                          model=Service
+                      ), name="service-detail"
                   ),
                   path(
                       "photos/", TemplateView.as_view(template_name="pages/photos.html"), name="photos"
@@ -31,6 +31,7 @@ urlpatterns = [
                   path("rules/ban/", TemplateView.as_view(template_name="pages/rules_ban.html"), name="home"),
                   # Django Admin, use {% url 'admin:index' %}
                   path(settings.ADMIN_URL, admin.site.urls),
+                  path('tinymce/', include('tinymce.urls')),
                   # User management
                   path("users/", include("mika_studio.users.urls", namespace="users")),
                   path("accounts/", include("allauth.urls")),

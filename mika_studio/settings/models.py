@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.safestring import mark_safe
+from tinymce import HTMLField
 
 from mika_studio.core.models import PageMeta
 
@@ -27,7 +28,7 @@ class Slider(models.Model):
 class Service(PageMeta):
     """Услуги"""
     image = models.ImageField('Картинка')
-    subtitle = models.TextField("Описание", null=True, blank=True)
+    subtitle = HTMLField("Описание", null=True, blank=True)
     price = models.CharField("Прайс", default=0, null=False,
                              help_text='Минимальный ценник на пример: От 1200 рублей за час', max_length=50)
 
@@ -40,7 +41,7 @@ class Service(PageMeta):
 
     def image_tag(self):
         from django.utils.html import escape
-        return mark_safe('<img width="150" src="%s" />' % escape(self.image.url))
+        return mark_safe('<img width="100" src="%s" />' % escape(self.image.url))
 
     image_tag.short_description = 'Картинка'
     image_tag.allow_tags = True
