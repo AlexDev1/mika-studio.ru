@@ -47,11 +47,15 @@
           <div class="section_tittle_style_02 justify-content-center">
             <h2 class="title wow fadeInDown" data-wow-delay=".3s"><span
                     class="title_overlay_effect"> {{ object.title }}</span></h2>
-            <p></p>
+
+
+          </div>
+          <div class="program_list_details">
             {{ object.subtitle|safe }}
           </div>
           {% for price in service.priceservices_set.all %}
             <div class="program_list_details ">
+
               <h5>Дни <span>{{ price.days }}</span></h5>
               <h5>Стоимость <span>{{ price.price|intcomma }} <i class="fas fa-ruble-sign"></i></span></h5>
               <h5>Время <span>{{ price.time }} </span></h5>
