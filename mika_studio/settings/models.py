@@ -31,11 +31,14 @@ class Service(PageMeta):
     subtitle = HTMLField("Описание", null=True, blank=True)
     price = models.CharField("Прайс", default=0, null=False,
                              help_text='Минимальный ценник на пример: От 1200 рублей за час', max_length=50)
+    order = models.PositiveSmallIntegerField("Порядок", default=0, db_index=True)
+
 
     def __str__(self):
         return self.title
 
     class Meta:
+        ordering = ['order']
         verbose_name = 'Услуга'
         verbose_name_plural = 'Услуги'
 
@@ -58,11 +61,13 @@ class PhotoServices(models.Model):
     services = models.ForeignKey(Service, on_delete=models.CASCADE)
     photo = models.ImageField("Фото", null=False, blank=False)
     title = models.CharField("Название", max_length=255, null=True, blank=True)
+    order = models.PositiveSmallIntegerField("Порядок", default=0, db_index=True)
 
     def __str__(self):
         return 'Фото {}'.format(self.title)
 
     class Meta:
+        ordering = ['order']
         verbose_name = 'Фото'
         verbose_name_plural = "Фотографии в услуге"
 
@@ -73,11 +78,13 @@ class PriceServices(models.Model):
     days = models.CharField("Дни", blank=False, null=False, max_length=100, help_text='Например: пн-чт')
     price = models.PositiveSmallIntegerField("Прайс", default=0)
     time = models.CharField("Время", max_length=100, help_text="с 9.00 до 21.00", default="с 9.00 до 21.00")
+    order = models.PositiveSmallIntegerField("Порядок", default=0, db_index=True)
 
     def __str__(self):
         return '{} - {} руб.'.format(self.days, self.price)
 
     class Meta:
+        ordering = ['order']
         verbose_name = 'Прайс'
         verbose_name_plural = "Прайсы"
 

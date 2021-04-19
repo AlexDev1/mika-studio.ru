@@ -73,6 +73,7 @@ THIRD_PARTY_APPS = [
     "rest_framework.authtoken",
     "corsheaders",
     "tinymce",
+    "adminsortable2",
 ]
 
 LOCAL_APPS = [

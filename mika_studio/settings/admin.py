@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin
 from django.contrib import admin
 
 from mika_studio.settings.models import Slider, Service, PriceServices, ShowPrograms, PhotoGallery, PhotoServices
@@ -8,17 +9,17 @@ class SliderAdmin(admin.ModelAdmin):
     list_display = ['title']
 
 
-class PriceAdmin(admin.TabularInline):
+class PriceAdmin(SortableInlineAdminMixin, admin.TabularInline):
     model = PriceServices
     extra = 0
 
 
-class PhotoServicesAdmin(admin.TabularInline):
+class PhotoServicesAdmin(SortableInlineAdminMixin, admin.TabularInline):
     model = PhotoServices
     extra = 0
 
 @admin.register(Service)
-class ServiceAdmin(admin.ModelAdmin):
+class ServiceAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ["image_tag", 'title', 'publish']
     inlines = [PriceAdmin, PhotoServicesAdmin]
     fields = ('title', 'image_tag', 'image', 'subtitle', 'price', 'publish')
@@ -30,5 +31,5 @@ class ShowProgramsAdmin(admin.ModelAdmin):
 
 
 @admin.register(PhotoGallery)
-class PhotoGalleryAdmin(admin.ModelAdmin):
+class PhotoGalleryAdmin(SortableInlineAdminMixin, admin.ModelAdmin):
     pass
