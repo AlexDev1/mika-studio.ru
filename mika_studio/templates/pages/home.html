@@ -59,10 +59,10 @@
         {% for service in services %}
         <div class="col-lg-4 col-sm-12 col-md-6">
           <div class="single_program_list wow fadeInUp" data-wow-delay=".{{ forloop.counter }}s">
-            <img src="{{ service.image.url }}" alt="#" class="img-fluid">
+            <a href="{{ service.get_absolut_url }}"><img src="{{ service.image.url }}" alt="#" class="img-fluid"></a>
             <div class="single_program_list_content bg-white">
               <h4><a href="{{ service.get_absolut_url }}">{{ service.title }}</a></h4>
-              <p>{{ service.subtitle|truncatechars:100 }}</p>
+              <p>{{ service.subtitle|safe|truncatechars_html:100 }}</p>
               {% for price in service.priceservices_set.all %}
                 <div class="program_list_details">
                   <h5>Дни <span>{{ price.days }}</span></h5>
