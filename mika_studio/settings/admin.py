@@ -31,5 +31,5 @@ class ShowProgramsAdmin(admin.ModelAdmin):
 
 
 @admin.register(PhotoGallery)
-class PhotoGalleryAdmin(SortableInlineAdminMixin, admin.ModelAdmin):
-    pass
+class PhotoGalleryAdmin(SortableAdminMixin, admin.ModelAdmin):
+    list_display = ["image_tag", 'title']

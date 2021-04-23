@@ -105,7 +105,7 @@ class ShowPrograms(PageMeta):
 
 class PhotoGallery(models.Model):
     photo = models.ImageField("Фото")
-    title = models.CharField("Название", max_length=255)
+    title = models.CharField("Название", max_length=255, blank=True, null=True)
     order = models.PositiveSmallIntegerField("Порядок", default=0, db_index=True)
 
     class Meta:
@@ -114,4 +114,11 @@ class PhotoGallery(models.Model):
         verbose_name_plural = "Фотогалерея"
 
     def __str__(self):
-        return self.title
+        return self.title if self.title else '-'
+
+    def image_tag(self):
+        from django.utils.html import escape
+        return mark_safe('<img width="100" src="%s" />' % escape(self.photo.url))
+
+    image_tag.short_description = 'Фото'
+    image_tag.allow_tags = True

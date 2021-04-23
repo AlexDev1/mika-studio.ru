@@ -74,6 +74,7 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "tinymce",
     "adminsortable2",
+    "sorl.thumbnail",
 ]
 
 LOCAL_APPS = [

@@ -19,3 +19,8 @@ def get_slider():
 @register.simple_tag
 def get_gallery():
     return PhotoGallery.objects.all()
+
+
+@register.simple_tag
+def get_gallery_home():
+    return PhotoGallery.objects.all()[:15]

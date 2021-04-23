@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load static settings_tags humanize %}
+{% extends "base.html" %}{% load static settings_tags humanize thumbnail %}
 {% block content %}
   <!-- banner part here -->
   <section class="banner_part bannerslider owl-carousel">{% get_slider as sliders %}
@@ -346,7 +346,8 @@
   {#  </section>#}
   {#  <!-- fetures part end -->#}
   {##}
-  {% include 'sections/gallery.html' %}
+  {% get_gallery_home as photos %}
+  {% include 'sections/gallery_sliders.html' with photos=photos %}
 
   <!-- services part here -->
   <section class="cta_section section_padding">
