@@ -5,9 +5,10 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{% block title %}{% endblock title %} - Mika Studio студия детских праздников</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Большая светлая студия с высокими потолками и волшебной атмосферой! У нас вы можете отметить день рождения, арендовать студию как игротеку, для проведения мастер-класса, или как фотостудию. Мы предоставим вам все для незабываемого праздника: детскую зону в которой имеется игровой лабиринт, большую  зону для родителей, локации для фотосессий, у нас тепло, светло и всегда играет музыка, вам захочется к нам вернуться.">
+  <meta name="description"
+        content="Большая светлая студия с высокими потолками и волшебной атмосферой! У нас вы можете отметить день рождения, арендовать студию как игротеку, для проведения мастер-класса, или как фотостудию. Мы предоставим вам все для незабываемого праздника: детскую зону в которой имеется игровой лабиринт, большую  зону для родителей, локации для фотосессий, у нас тепло, светло и всегда играет музыка, вам захочется к нам вернуться.">
   <meta name="author" content="Aleksey H.">
-  <meta name="yandex-verification" content="b4915e4883bf4980" />
+  <meta name="yandex-verification" content="b4915e4883bf4980"/>
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -21,24 +22,33 @@
       <link rel="stylesheet" href="{% static 'vendors/themefy_icon/themify-icons.css' %}"/>
       <link rel="stylesheet" href="{% static 'vendors/niceselect/css/nice-select.css' %}"/>
       <link rel="stylesheet" href="{% static 'vendors/owl_carousel/css/owl.carousel.css' %}"/>
-      <link rel="stylesheet" href="{% static 'vendors/magnify_popup/magnific-popup.css' %}" />
+      <link rel="stylesheet" href="{% static 'vendors/magnify_popup/magnific-popup.css' %}"/>
       <link rel="stylesheet" type="text/x-scss" href="{% static 'scss/style.scss' %}" media="all"/>
     {% endcompress %}
   {% endblock %}
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  {% if not DEBUG %}
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+          (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+      })
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(76568728, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true
+      });
+    </script>
 
-   ym(76568728, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/76568728" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <noscript>
+      <div><img src="https://mc.yandex.ru/watch/76568728" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+  {% endif %}
 </head>
 
 <body>
@@ -69,62 +79,62 @@
   {% block content %}{% endblock content %}
 {% endblock %}
 {% cache 360000 '_footer_mika' %}
-<footer class="footer_section home_two_footer">
-  <div class="container">
-    <div class="row justify-content-between">
-      <div class="col-lg-3 col-sm-6 wow fadeInDown" data-wow-delay=".3s">
-        <div class="single_footer_widget">
-          <a href="index.html" class="footer_logo"><img src="{% static 'img/logo.png' %}" alt="#"></a>
-          <p>Проведение детских мероприятий
-          </p>
+  <footer class="footer_section home_two_footer">
+    <div class="container">
+      <div class="row justify-content-between">
+        <div class="col-lg-3 col-sm-6 wow fadeInDown" data-wow-delay=".3s">
+          <div class="single_footer_widget">
+            <a href="index.html" class="footer_logo"><img src="{% static 'img/logo.png' %}" alt="#"></a>
+            <p>Проведение детских мероприятий
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-2 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
-        <div class="single_footer_widget footer_nav">
-          <h4>Услуги</h4>
-          <ul>
-            {% get_menu_services as services %}
-            {% for item in services %}
-              <li><a href="{{ item.get_absolut_url }}">{{ item }}</a></li>
-            {% endfor %}
+        <div class="col-lg-2 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
+          <div class="single_footer_widget footer_nav">
+            <h4>Услуги</h4>
+            <ul>
+              {% get_menu_services as services %}
+              {% for item in services %}
+                <li><a href="{{ item.get_absolut_url }}">{{ item }}</a></li>
+              {% endfor %}
 
-          </ul>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-2 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
-        <div class="single_footer_widget footer_nav">
-          <h4>Полезные ссылки</h4>
-          <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Контакты</a></li>
-            <li><a href="#">Новости</a></li>
-          </ul>
+        <div class="col-lg-2 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
+          <div class="single_footer_widget footer_nav">
+            <h4>Полезные ссылки</h4>
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#">Новости</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-3 col-sm-6 wow fadeInDown" data-wow-delay=".9s">
-        <div class="single_footer_widget instagram_feed">
-          <h4>Mika Studio</h4>
-          <p>Детские праздники, фотостудия, игротека</p>
-          <form action="#">
-            <div class="input-group">
-              <input type="Email" class="form-control" placeholder="Email">
-              <div class="input-group-append">
-                <span class="input-group-text"> <i class="ti-arrow-right"></i> </span>
+        <div class="col-lg-3 col-sm-6 wow fadeInDown" data-wow-delay=".9s">
+          <div class="single_footer_widget instagram_feed">
+            <h4>Mika Studio</h4>
+            <p>Детские праздники, фотостудия, игротека</p>
+            <form action="#">
+              <div class="input-group">
+                <input type="Email" class="form-control" placeholder="Email">
+                <div class="input-group-append">
+                  <span class="input-group-text"> <i class="ti-arrow-right"></i> </span>
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="footer_bg">
-    <img src="{% static 'img/footer_bg.png' %}" alt="#" class="img-fluid">
-  </div>
-  <div class="footer_animation_3">
-    <div data-parallax='{"x": 30, "y": 70, "rotateZ":0}'><img src="{% static 'img/footer_img.png' %}" alt="#"></div>
-  </div>
-</footer>
+    <div class="footer_bg">
+      <img src="{% static 'img/footer_bg.png' %}" alt="#" class="img-fluid">
+    </div>
+    <div class="footer_animation_3">
+      <div data-parallax='{"x": 30, "y": 70, "rotateZ":0}'><img src="{% static 'img/footer_img.png' %}" alt="#"></div>
+    </div>
+  </footer>
 {% endcache %}
 {% block modal %}{% endblock modal %}
 {% block javascript %}
