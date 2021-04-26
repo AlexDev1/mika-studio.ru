@@ -33,3 +33,5 @@ class ShowProgramsAdmin(admin.ModelAdmin):
 @admin.register(PhotoGallery)
 class PhotoGalleryAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = ["image_tag", 'title']
+    # list_editable = ['order']
+    pass

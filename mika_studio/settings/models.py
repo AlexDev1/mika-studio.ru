@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from tinymce import HTMLField
-
+from sorl.thumbnail import ImageField
 from mika_studio.core.models import PageMeta
 
 
@@ -104,9 +104,9 @@ class ShowPrograms(PageMeta):
 
 
 class PhotoGallery(models.Model):
-    photo = models.ImageField("Фото")
+    photo = ImageField("Фото", upload_to="photos")
     title = models.CharField("Название", max_length=255, blank=True, null=True)
-    order = models.PositiveSmallIntegerField("Порядок", default=0, db_index=True)
+    order = models.PositiveSmallIntegerField("Порядок", default=0, db_index=True, blank=False, null=False)
 
     class Meta:
         ordering = ['order']
@@ -118,7 +118,7 @@ class PhotoGallery(models.Model):
 
     def image_tag(self):
         from django.utils.html import escape
-        return mark_safe('<img width="100" src="%s" />' % escape(self.photo.url))
+        return mark_safe('<img height="60" src="%s" />' % escape(self.photo.url))
 
     image_tag.short_description = 'Фото'
     image_tag.allow_tags = True
