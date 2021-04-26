@@ -23,4 +23,4 @@ def get_gallery():
 
 @register.simple_tag
 def get_gallery_home():
-    return PhotoGallery.objects.all()[:15]
+    return PhotoGallery.objects.all().order_by('?')[:15]
