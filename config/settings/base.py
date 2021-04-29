@@ -75,7 +75,7 @@ THIRD_PARTY_APPS = [
     "tinymce",
     "adminsortable2",
     "sorl.thumbnail",
-    'reviews',
+    # 'reviews',
 ]
 
 LOCAL_APPS = [
