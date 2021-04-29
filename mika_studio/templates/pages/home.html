@@ -75,15 +75,15 @@
                     <h5>Время <span>{{ price.time }} </span></h5>
                   </div>
                 {% endfor %}
-                Отзывов:{% get_review_count for service as review_count %}{{ review_count }}
+{#                Отзывов:{% get_review_count for service as review_count %}{{ review_count }}#}
               </div>
 
             </div>
 
-            {% get_review_list for service as review_list %}
-            {% for review in review_list %}
-              {{ review }}
-            {% endfor %}
+{#            {% get_review_list for service as review_list %}#}
+{#            {% for review in review_list %}#}
+{#              {{ review }}#}
+{#            {% endfor %}#}
           </div>
         {% endfor %}
       </div>
