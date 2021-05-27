@@ -17,22 +17,22 @@
       </div>
       <div class="banner_animation_1">
         <div data-parallax='{"x": 20, "y": 2{{ object.pk }}0, "rotateZ":0}'>
-          <img src="{% static '' %}img/icon/banner_two_1.png" alt="#">
+          <img src="{% static 'img/icon/banner_two_1.png' %}" alt="#">
         </div>
       </div>
       <div class="banner_animation_2">
         <div data-parallax='{"x": 15, "y": {{ object.pk }}50, "rotateZ":{{ object.pk }}}'>
-          <img src="{% static '' %}img/icon/banner_two_3.png" alt="#">
+          <img src="{% static 'img/icon/banner_two_3.png' %}" alt="#">
         </div>
       </div>
       <div class="banner_animation_3">
         <div data-parallax='{"x": {{ object.pk }}0, "y": 200, "rotateZ":0}'>
-          <img src="{% static '' %}img/icon/banner_two_2.png" alt="#">
+          <img src="{% static 'img/icon/banner_two_2.png' %}" alt="#">
         </div>
       </div>
       <div class="banner_animation_4">
         <div data-parallax='{"x": 10, "y": 1{{ object.pk }}0, "rotateZ":{{ object.pk }}}'>
-          <img src="{% static '' %}img/icon/banner_two_4.png" alt="#">
+          <img src="{% static 'img/icon/banner_two_4.png' %}" alt="#">
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
 
     </div>
   </section>
-  {% if object.photos %}
+  {% if object.photos.all %}
     {% include 'sections/gallery_sliders.html' with photos=object.photos.all %}
   {% endif %}
 {% endblock %}
