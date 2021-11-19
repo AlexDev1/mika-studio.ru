@@ -1,6 +1,6 @@
 Mika Studio
 ===========
-
+docker cp $(docker-compose -f local.yml ps -q django):/app/mika_studio/media ../backup_media
 web-site for mika-studio
 
 .. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg?logo=cookiecutter
