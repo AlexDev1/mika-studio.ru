@@ -1,0 +1,213 @@
+{% extends "base.html" %}{% load static %}
+{% block extra_head %}
+<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/newyaer.scss' %}" media="all"/>
+{% endblock %}
+{% block content %}
+
+<!-- 1 screen -->
+<section class="intro bg-blue">
+    <div class="container custom_container">
+        <img class="fir-tree fir-tree-big" src="{% static 'img/fir-1.png' %}" alt="">
+        <div class="row">
+            <img src="{% static 'img/stars.png' %}" alt="" class="intro-bg-image">
+            <div class="col-5 offset-2">
+                <div class="d-flex justify-content-end">
+                    <div class="intro-text">
+                        <h1><sup>Новогодняя</sup>С дедом морозом, снегурочкой и зимушкой <sup>интермедия</sup></h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex">
+                    <div class="intro-description">
+                        <h3>В программе:</h3>
+                        <ul>
+                            <li>представление</li>
+                            <li>ёлка</li>
+                            <li>подарки</li>
+                            <li>фотограф</li>
+                        </ul>
+                        <img src="{% static 'img/gifts.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <img class="fir-tree fir-tree-small" src="{% static 'img/fir-2.png' %}" alt="">
+
+        </div>
+    </div>
+</section> <!-- END 1 screen -->
+
+<!-- 2 screen -->
+<section class="features bg-turquoise-gradient">
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col-5">
+                <img src="{% static 'img/childrens.png' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col d-flex justify-content-center">
+                <div class="features-description">
+                    <h2>
+                        Проведи время с удовольствием
+                    </h2>
+                    <p>
+                        Для ваших детей от 2 до 7 лет студия праздников MiKa предлагает
+                    </p>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="features-list">
+                                <div class="features-list--marker">1</div>
+                                <div class="features-list--text">
+                                    <h3>Заголовок</h3>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="features-list">
+                                <div class="features-list--marker">2</div>
+                                <div class="features-list--text">
+                                    <h3>Заголовок</h3>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="features-list">
+                                <div class="features-list--marker">3</div>
+                                <div class="features-list--text">
+                                    <h3>Заголовок</h3>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="features-list">
+                                <div class="features-list--marker">4</div>
+                                <div class="features-list--text">
+                                    <h3>Заголовок</h3>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- END 2 screen -->
+
+<!-- 3 screen -->
+<section class="price bg-blue-gradient">
+
+    <div class="container custom_container">
+        <img class="" src="{% static 'img/fir-toys.png' %}" alt="">
+        <img class="price-img price-img-bg" src="{% static 'img/snowflakes.png' %}" alt="">
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="price-wrapper">
+                    <div class="price-block">
+                        <div class="row">
+                            <div class="col d-flex align-items-center">
+                                <div class="price-block--title">Стоимость</div>
+                            </div>
+                            <div class="col">
+                                <div class="price-block--cost">900 ₽</div>
+                            </div>
+                            <div class="col-12">
+                                <p>В билет входит посещение одного ребенка и одного
+                                    сопровождающего на одно из представлений
+                                    продолжительность 60 минут в студии MiKa.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg width="100%" height="600" viewBox="0 0 1920 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1919.99 146.396C1684.31 105.147 1443.35 245.051 1207.54 192.431C1109.82 170.626 984.388 83.5802 894.591 43.3253C776.323 -6.23199 694.241 -13.0972 566.684 21.8155C427.13 60.013 236.323 163.581 91.0258 157.368L0 147.594V600H1919.99V146.396Z" fill="url(#paint0_linear_828_349)"/>
+        <defs>
+            <linearGradient id="paint0_linear_828_349" x1="959.997" y1="0" x2="959.997" y2="600" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#2FB6B9" stop-opacity="0.47"/>
+                <stop offset="1" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+    </svg>
+</section>
+
+<!-- 4 screen -->
+<section class="products">
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col">
+                <div class="card-deck products-cards">
+                    <div class="card card-purple-300">
+                        <div class="card-body">
+                            <img src="{% static 'img/card-1.png' %}" alt="...">
+                            <div class="card-date">18 декабря в 11:00</div>
+                            <h5 class="card-title">Тайна волшебного светлячка</h5>
+                            <a class="card-link">Описание</a>
+                            <button class="card-action">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card card-violet-400">
+                        <div class="card-body">
+                            <img src="{% static 'img/card-2.png' %}" alt="...">
+                            <div class="card-date">18 декабря в 11:00</div>
+                            <h5 class="card-title">Тайна волшебного светлячка</h5>
+                            <a class="card-link">Описание</a>
+                            <button class="card-action">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card card-yellow-300">
+                        <div class="card-body">
+                            <img src="{% static 'img/card-3.png' %}" alt="...">
+                            <div class="card-date">18 декабря в 11:00</div>
+                            <h5 class="card-title">Тайна волшебного светлячка</h5>
+                            <a class="card-link">Описание</a>
+                            <button class="card-action">Купить</button>
+                        </div>
+                    </div>
+                    <div class="card card-violet-300">
+                        <div class="card-body">
+                            <img src="{% static 'img/card-4.png' %}" alt="...">
+                            <div class="card-date">18 декабря в 11:00</div>
+                            <h5 class="card-title">Тайна волшебного светлячка</h5>
+                            <a class="card-link">Описание</a>
+                            <button class="card-action">Купить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><!-- END 4 screen -->
+
+<!-- 5 screen -->
+<section class="cta">
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col-10 offset-1">
+                <div class="card-cta">
+                    <div class="d-flex justify-content-around align-self-center">
+                        <img src="{% static 'img/cta-avatar.png' %}" alt="">
+                        <div class="card-cta-form my-auto">
+                            <form action="">
+                                <h5>У вас остались вопросы?</h5>
+                                <p>Оставьте заявку и мы свяжемся с Вами</p>
+
+                                <div class="d-flex">
+                                    <input type="text" placeholder="Введите свой телефон">
+                                    <button type="submit">Ок</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- END 5 screen -->
+
+{% endblock %}

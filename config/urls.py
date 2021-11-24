@@ -8,36 +8,29 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 from mika_studio.settings.models import Service
 
-urlpatterns = [
-                  path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
-                  path(
-                      "about/", TemplateView.as_view(template_name="pages/about.html"), name="about"
-                  ),
-                  path(
-                      "contacts/", TemplateView.as_view(template_name="pages/contacts.html"), name="contacts"
-                  ),
-                  path(
-                      "service/<int:pk>/", DetailView.as_view(
-                          template_name="services/detail.html",
-                          model=Service
-                      ), name="service-detail"
-                  ),
-                  path(
-                      "photos/", TemplateView.as_view(template_name="pages/photos.html"), name="photos"
-                  ),
-                  path("rules/visiting/", TemplateView.as_view(template_name="pages/rules_visiting.html"), name="home"),
-                  path("rules/pay/", TemplateView.as_view(template_name="pages/rules_pay.html"), name="home"),
+urlpatterns = [path("", TemplateView.as_view(template_name="pages/home.html"), name="home"),
+               path("newyear/", TemplateView.as_view(template_name="pages/newyear.html"), name="newyear"),
+               path("about/", TemplateView.as_view(template_name="pages/about.html"), name="about"),
+               path("contacts/", TemplateView.as_view(template_name="pages/contacts.html"), name="contacts"),
+               path("service/<int:pk>/", DetailView.as_view(
+                       template_name="services/detail.html",
+                       model=Service
+                   ), name="service-detail"
+               ),
+               path("photos/", TemplateView.as_view(template_name="pages/photos.html"), name="photos"),
+               path("rules/visiting/", TemplateView.as_view(template_name="pages/rules_visiting.html"), name="home"),
+               path("rules/pay/", TemplateView.as_view(template_name="pages/rules_pay.html"), name="home"),
 
-                  path("rules/ban/", TemplateView.as_view(template_name="pages/rules_ban.html"), name="home"),
-                  # Django Admin, use {% url 'admin:index' %}
-                  path(settings.ADMIN_URL, admin.site.urls),
-                  path('tinymce/', include('tinymce.urls')),
-                  # User management
-                  path("users/", include("mika_studio.users.urls", namespace="users")),
-                  path("accounts/", include("allauth.urls")),
-                    # path('reviews/', include('reviews.urls')),
-                  # Your stuff: custom urls includes go here
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+               path("rules/ban/", TemplateView.as_view(template_name="pages/rules_ban.html"), name="home"),
+               # Django Admin, use {% url 'admin:index' %}
+               path(settings.ADMIN_URL, admin.site.urls),
+               path('tinymce/', include('tinymce.urls')),
+               # User management
+               path("users/", include("mika_studio.users.urls", namespace="users")),
+               path("accounts/", include("allauth.urls")),
+               # path('reviews/', include('reviews.urls')),
+               # Your stuff: custom urls includes go here
+               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # API URLS
 urlpatterns += [

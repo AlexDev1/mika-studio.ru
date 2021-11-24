@@ -75,12 +75,16 @@ THIRD_PARTY_APPS = [
     "tinymce",
     "adminsortable2",
     "sorl.thumbnail",
-    # 'reviews',
+    "autoslug",
+    "tagging",
+    "tagging_autocomplete",
+    "simple_history",
 ]
 
 LOCAL_APPS = [
     "mika_studio.users.apps.UsersConfig",
     "mika_studio.settings.apps.SettingsConfig",
+    "mika_studio.pages.apps.PagesConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -139,6 +143,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "simple_history.middleware.HistoryRequestMiddleware",
 ]
 
 # STATIC
