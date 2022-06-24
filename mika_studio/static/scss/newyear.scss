@@ -53,7 +53,7 @@
     &-blue {
         background: #CAE4EF;
         &-gradient {
-            background: linear-gradient(180deg, #CAE4EF 0%, #CAE4EF 42.15%, rgba(202, 228, 239, 0.807435) 56.71%, rgba(202, 228, 239, 0.265128) 61.7%, rgba(202, 228, 239, 0) 87.1%);
+            background: linear-gradient(180deg, #CAE4EF 0%, #CAE4EF 75.15%, rgba(202, 228, 239, 0.807435) 56.71%, rgba(202, 228, 239, 0.265128) 77.7%, rgba(202, 228, 239, 0) 87.1%);
         }
     }
     &-turquoise {
@@ -157,7 +157,8 @@
 
 .features {
     .features-description {
-        @extend .px-5;
+        //@extend .px-5;
+      padding-left: 1.25rem;
         text-align: justify;
         font-family: Comfortaa;
         margin: 3rem auto 0;
@@ -216,13 +217,14 @@
     min-height: 900px;
 
     &-wrapper {
-        @extend .d-flex;
-        @extend .justify-content-center;
+        //@extend .d-flex;
+
+        //@extend .justify-content-center;
 
         min-height: 350px;
     }
     &-block {
-        @extend .my-auto;
+        //@extend .my-auto;
         font-family: Comfortaa;
 
         &--title {
@@ -304,13 +306,16 @@
                 height: 175px;
             }
             &-date {
-                @extend .mt-3;
+                //@extend .mt-3;
+                margin-top: .75rem;
                 font-size: 25px;
                 font-weight: bold;
                 line-height: 150%;
             }
             &-title {
-                @extend .my-3;
+                //@extend .my-3;
+              margin-top: .75rem;
+              margin-bottom: .75rem;
                 font-weight: bold;
                 font-size: 24px;
                 line-height: 28px;
@@ -332,7 +337,8 @@
                 }
             }
             &-action {
-                @extend .mt-3;
+                //@extend .mt-3;
+              margin-top: .75rem;
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 160%;

@@ -1,4 +1,4 @@
-export DATABASE_URL=postgres://admun:LaxTe363@127.0.0.1:5432/mika_studio
+export DATABASE_URL=postgres://admun:LaxTe363@127.0.0.1:5433/mika_studio
 export CELERY_BROKER_URL=redis://localhost:6379/8
 export USE_DOCKER=no
 #PYTHONUNBUFFERED=1;DATABASE_URL=postgres://admun:LaxTe363@127.0.0.1:5432/mika_studio;CELERY_BROKER_URL=redis://localhost:6379/;USE_DOCKER=no

@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% load static %}
 {% block extra_head %}
-<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/newyaer.scss' %}" media="all"/>
+{#<link rel="stylesheet" type="text/x-scss" href="{% static 'scss/newyaer.scss' %}" media="all"/>#}
 {% endblock %}
 {% block content %}
 
@@ -104,8 +104,8 @@
         <img class="price-img price-img-bg" src="{% static 'img/snowflakes.png' %}" alt="">
         <div class="row">
             <div class="col-8 offset-2">
-                <div class="price-wrapper">
-                    <div class="price-block">
+                <div class="price-wrapper d-flex justify-content-center">
+                    <div class="price-block my-auto">
                         <div class="row">
                             <div class="col d-flex align-items-center">
                                 <div class="price-block--title">Стоимость</div>
