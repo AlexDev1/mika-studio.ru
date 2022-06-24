@@ -32,6 +32,10 @@ services:
       - production_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.production/.postgres
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   traefik:
     build:
@@ -54,6 +58,10 @@ services:
     <<: *django
     image: mika_produ_celeryworker
     command: /start-celeryworker
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   celerybeat:
     <<: *django

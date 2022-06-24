@@ -34,6 +34,10 @@ services:
       - local_postgres_data_backups:/backups:z
     env_file:
       - ./.envs/.local/.postgres
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   docs:
     image: mika_studio_local_docs
@@ -60,6 +64,10 @@ services:
   redis:
     image: redis:5.0
     container_name: redis_mika
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   celeryworker:
     <<: *django
