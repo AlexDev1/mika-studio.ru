@@ -63,14 +63,14 @@ services:
         max-size: "10m"
         max-file: "3"
 
-  celerybeat:
-    <<: *django
-    image: mika_prod_celerybeat
-    command: /start-celerybeat
+  #celerybeat:
+  #  <<: *django
+  #  image: mika_prod_celerybeat
+  #  command: /start-celerybeat
 
-  flower:
-    <<: *django
-    image: mika_prod_flower
-    command: /start-flower
+  #flower:
+  #  <<: *django
+  #  image: mika_prod_flower
+  #  command: /start-flower
 
 
